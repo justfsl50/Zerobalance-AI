@@ -1,0 +1,80 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  /* background-attachment: fixed; is now applied directly with the new gradient */
+}
+
+@layer base {
+  :root {
+    /* Dark Theme - Black and Orange Scheme (Darker) */
+    --background: 240 4% 7%; /* Even darker neutral gray for main content areas */
+    --foreground: 0 0% 96%; /* Off-white for text */
+
+    --muted: 0 0% 15%; /* Darker gray for muted elements */
+    --muted-foreground: 0 0% 65%; /* Lighter gray for muted text */
+
+    --popover: 0 0% 9%; /* Consistent with cards, very dark */
+    --popover-foreground: 0 0% 96%;
+
+    --card: 0 0% 9%; /* Very dark gray for cards, slightly lighter than main bg */
+    --card-foreground: 0 0% 96%;
+
+    --border: 0 0% 13%; /* Subtle border */
+    --input: 0 0% 12%; /* Dark input fields */
+
+    --primary: 25 95% 53%; /* Vibrant Orange */
+    --primary-foreground: 20 14% 4%; /* Dark text for primary buttons */
+
+    --secondary: 25 70% 30%; /* Muted orange for secondary elements */
+    --secondary-foreground: 0 0% 96%;
+
+    /* --accent is used for hover on ghost buttons (e.g., header icons) */
+    --accent: 0 0% 13%; /* Slightly lighter than card/popover for hover */
+    --accent-foreground: 0 0% 96%;
+
+    --destructive: 0 70% 50%; /* Red for destructive actions */
+    --destructive-foreground: 0 0% 98%;
+
+    --ring: 25 95% 53%; /* Ring color matching primary */
+    --radius: 0.5rem; /* Default border radius */
+
+    /* Sidebar specific vars - Dark (Black and Orange Scheme - Darker) */
+    --sidebar-background: 0 0% 6%; /* Even darker for sidebar, near black */
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-border: 0 0% 11%; /* Subtle border for sidebar elements */
+    --sidebar-primary: 25 95% 53%; /* Orange, matching app primary */
+    --sidebar-primary-foreground: 20 14% 4%;
+    /* --sidebar-accent is used for hover on sidebar menu buttons */
+    --sidebar-accent: 0 0% 11%; /* Subtle hover for sidebar items */
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-ring: 25 95% 53%;
+
+    /* Chart colors for this black and orange theme */
+    --chart-1: 35 100% 60%; /* Bright Orange/Yellow */
+    --chart-2: 25 95% 53%;  /* Primary Orange */
+    --chart-3: 15 90% 55%;  /* Reddish Orange */
+    --chart-4: 45 100% 55%; /* Gold/Yellow */
+    --chart-5: 0 0% 80%;    /* Light Gray for contrast */
+  }
+}
+
+/* Apply body gradients. Content using `bg-background` will sit on top. */
+body {
+  /* Gradient: Very dark start/end, vibrant orange middle */
+  background-image: linear-gradient(160deg, hsl(0, 0%, 5%) 0%, hsl(25, 80%, 40%) 50%, hsl(0, 0%, 3%) 100%);
+  background-attachment: fixed;
+}
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+     @apply text-foreground;
+  }
+}
